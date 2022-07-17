@@ -3,6 +3,11 @@ import numpy as np
 import math
 from helpers.motors import ALL_MOTORS
 
+st.set_page_config(
+    page_title="Intake Mechanism",
+    page_icon="./assets/FIRST-Icon.png"
+)
+
 st.title("Intake Mechanism")
 
 def get_motor_from_selection(motor_name):

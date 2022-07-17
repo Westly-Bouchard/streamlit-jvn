@@ -2,6 +2,11 @@ import streamlit as st
 import numpy as np
 from helpers.motors import ALL_MOTORS
 
+st.set_page_config(
+    page_title="Rotary Mechanism",
+    page_icon="./assets/FIRST-Icon.png"
+)
+
 st.title("Rotary Mechanism")
 
 def get_motor_from_selection(motor_name):
