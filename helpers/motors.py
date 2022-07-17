@@ -8,7 +8,7 @@ class motor:
         self.name = name
 
 CIM = motor(5330, 2.41, 131.00, 2.70, 336.29, "CIM")
-MINI_CIM = motor(5840, 1.41, 89.00, 3.00, 215.58), "Mini CIM"
+MINI_CIM = motor(5840, 1.41, 89.00, 3.00, 215.58, "Mini CIM")
 BAG = motor(13180, 0.43, 53.00, 1.80, 148.37, "BAG")
 PRO775 = motor(18730, 0.71, 134.00, 0.70, 348.15, "775 Pro")
 AM775 = motor(5800, 0.28, 18.00, 1.60, 42.52, "AM 775")
