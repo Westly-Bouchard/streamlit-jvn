@@ -5,9 +5,6 @@ from helpers.motors import ALL_MOTORS
 
 st.title("Custom 1 Speed Drive")
 
-def test_func():
-    return 5
-
 def get_motor_from_selection(motor_name):
     for motor in ALL_MOTORS:
         if motor.name == motor_name:
