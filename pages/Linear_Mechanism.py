@@ -44,7 +44,8 @@ def calculate():
                             (0.2248 * 39.37)) + (selected_motor.free_current * session_state.get("num_motors"))) / \
                             session_state.get("num_motors")
 
-    speed_l = (((-1) * ((selected_motor.free_speed / (gearing) * (360 / 60)) / (stall_load)) * (session_state.get("applied_load"))) + (selected_motor.free_speed / (gearing) * (360 / 60))) * (math.pi * 2 * (session_state.get("pully_dia") / 2) / 360)
+    speed_l = (((-1) * ((selected_motor.free_speed / (gearing) * (360 / 60)) / (stall_load)) * (session_state.get("applied_load"))) \
+        + (selected_motor.free_speed / (gearing) * (360 / 60))) * (math.pi * 2 * (session_state.get("pully_dia") / 2) / 360)
 
     time_to_dist_l = 1 / (speed_l / session_state.get("travel_dist"))
 
