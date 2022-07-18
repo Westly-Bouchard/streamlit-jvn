@@ -43,7 +43,7 @@ def calculate():
 
     rot_speed_l = ((-1) * (rot_speed_nl / stall_load) * session_state.get("arm_load")) + rot_speed_nl
 
-    time_to_90_deg_nl = 90 / rot_speed_l
+    time_to_90_deg_l = 90 / rot_speed_l
 
     current_draw_per_motor_l = ((((selected_motor.stall_current * session_state.get("num_motors")) - \
                             (selected_motor.free_current * session_state.get("num_motors"))) / \
@@ -52,13 +52,29 @@ def calculate():
                             (0.2248 * 39.37)) + (selected_motor.free_current * session_state.get("num_motors"))) / \
                             session_state.get("num_motors")
 
-    st.write(stall_load)
+    col1, col2, col3, col4 = st.columns(4)
 
-    st.write(rot_speed_nl)
+    col1.metric(
+        "Rotational Speed No Load",
+        value=f"{round(rot_speed_nl, 2)} deg/s",
+        delta=f"{round(time_to_90_deg_nl, 2)} sec"
+    )
 
-    st.write(rot_speed_l)
+    col2.metric(
+        "Rotational Speed Loaded",
+        value=f"{round(rot_speed_l, 2)} deg/s",
+        delta=f"{round(time_to_90_deg_l, 2)} sec"
+    )
 
-    st.write(current_draw_per_motor_l)
+    col3.metric(
+        "Current Draw Per Motor",
+        value=f"{round(current_draw_per_motor_l, 2)} Amp"
+    )
+
+    col4.metric(
+        "Stall Load",
+        value=f"{round(stall_load, 2)} lbs"
+    )
 
 
 st.selectbox(
