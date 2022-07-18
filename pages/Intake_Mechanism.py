@@ -54,13 +54,29 @@ def calculate():
 
     time_to_dist_l = 1 / (speed_l / session_state.get("travel_dist"))
 
-    st.write(speed_nl)
+    col1, col2, col3, col4 = st.columns(4)
 
-    st.write(stall_load)
-    
-    st.write(current_draw_per_motor_l)
+    col1.metric(
+        "Speed No Load",
+        value=f"{round(speed_nl, 2)} in/s",
+        delta=f"{round(time_to_dist_nl, 2)} sec"
+    )
 
-    st.write(speed_l)
+    col2.metric(
+        "Speed Loaded",
+        value=f"{round(speed_l, 2)} in/s",
+        delta=f"{round(time_to_dist_l, 2)} sec"
+    )
+
+    col3.metric(
+        "Current Draw Per Motor",
+        value=f"{round(current_draw_per_motor_l, 2)} Amp"
+    )
+
+    col4.metric(
+        "Stall Drag Load",
+        value=f"{round(stall_load, 2)} lbs"
+    )
 
 
 st.selectbox(
