@@ -47,11 +47,22 @@ def calculate():
                             (session_state.get("drivetrain_efficiency") / 100) / session_state.get("num_motors") / gearing)) + \
                             selected_motor.free_current
 
-    st.write(f"Drivetrain Adjusted Speed: {round(dt_adjusted_speed, 2)}")
+    col1, col2, col3 = st.columns(3)
 
-    st.write(f"Drivetrain Free Speed: {round(dt_free_speed, 2)}")
+    col1.metric(
+        label="Free Speed",
+        value=f"{round(dt_free_speed, 2)} ft/s",
+    )
 
-    st.write(f"\"Pushing\" Current Draw per Motor: {round(current_draw_per_motor, 2)}")
+    col2.metric(
+        label="Adjusted Speed",
+        value=f"{round(dt_adjusted_speed, 2)} ft/s"
+    )
+
+    col3.metric(
+        label="Current Draw Per Motor",
+        value=f"{round(current_draw_per_motor, 2)} Amps"
+    )
 
 st.selectbox(
     "Choose Motor",
