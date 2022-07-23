@@ -110,7 +110,7 @@ col1.number_input(
 col2.number_input(
     "Arm Length (in)",
     key="arm_length",
-    value=2,
+    value=2.0,
     on_change=calculate
 )
 
