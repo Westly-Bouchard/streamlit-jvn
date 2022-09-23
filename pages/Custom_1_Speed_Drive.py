@@ -23,7 +23,7 @@ def parse_gearing(input_string):
 
     for ratio in parsed_ratios:
         driving_gear, driven_gear = ratio.split(":")
-        ratios.append(int(driven_gear) / int(driving_gear))
+        ratios.append(float(driven_gear) / float(driving_gear))
 
 
     return np.prod(ratios)
@@ -76,14 +76,14 @@ col1, col2 = st.columns(2)
 col1.number_input(
     "Speed Loss Constant (%)",
     key="speed_loss",
-    value=81,
+    value=81.0,
     on_change=calculate
 )
 
 col2.number_input(
     "Drivetrain Efficiency (%)",
     key="drivetrain_efficiency",
-    value=90,
+    value=90.0,
     on_change=calculate
 )
 
@@ -104,21 +104,21 @@ col2.number_input(
 col1.number_input(
     "Total Weight (lbs)",
     key="total_weight",
-    value=150,
+    value=150.0,
     on_change=calculate
 )
 
 col2.number_input(
     "Weight on DT Wheels (%)",
     key="weight_on_wheels",
-    value=100,
+    value=100.0,
     on_change=calculate
 )
 
 col1.number_input(
     "Wheel Diameter (in)",
     key="wheel_dia",
-    value=4,
+    value=4.0,
     on_change=calculate
 )
 

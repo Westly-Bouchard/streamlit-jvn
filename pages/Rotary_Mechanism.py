@@ -22,7 +22,7 @@ def parse_gearing(input_string):
 
     for ratio in parsed_ratios:
         driving_gear, driven_gear = ratio.split(":")
-        ratios.append(int(driven_gear) / int(driving_gear))
+        ratios.append(float(driven_gear) / float(driving_gear))
 
 
     return np.prod(ratios)
@@ -96,7 +96,7 @@ col1.number_input(
 col2.number_input(
     "Gearbox Efficiency (%)",
     key="gb_efficiency",
-    value=65,
+    value=65.0,
     on_change=calculate
 )
 

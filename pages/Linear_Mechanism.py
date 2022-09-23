@@ -23,7 +23,7 @@ def parse_gearing(input_string):
 
     for ratio in parsed_ratios:
         driving_gear, driven_gear = ratio.split(":")
-        ratios.append(int(driven_gear) / int(driving_gear))
+        ratios.append(float(driven_gear) / float(driving_gear))
 
 
     return np.prod(ratios)
@@ -97,7 +97,7 @@ col1.number_input(
 col2.number_input(
     "Gearbox Efficiency (%)",
     key="gb_efficiency",
-    value=80,
+    value=80.0,
     on_change=calculate
 )
 
@@ -106,14 +106,14 @@ col3, col4, col5 = st.columns(3)
 col3.number_input(
     "Travel Distance",
     key="travel_dist",
-    value=24,
+    value=24.0,
     on_change=calculate
 )
 
 col4.number_input(
     "Applied Load (lbs)",
     key="applied_load",
-    value=180,
+    value=180.0,
     on_change=calculate
 )
 
